@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  overflow-x: hidden;
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  z-index: 10000;
+}
+
+.circle {
+  background-color: #ff7979;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  z-index: 10000;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font-size: 25px;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 50%;
+}
+
+.circle button#close {
+  top: 70%;
+
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+.container {
+  width: 100vw;
+  background-color: #fafafa;
+  transform-origin: top left;
+  min-height: 100vh;
+  transition: transform 0.5s linear;
+  padding: 100px 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container .heading p {
+  font-style: italic;
+  font-weight: 300;
+  color: #737373;
+}
+
+.container .article {
+  text-align: justify;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
